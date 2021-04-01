@@ -1,0 +1,228 @@
+CURL Create Repository (With Token)
+--------------------------------------------
+
+curl -X POST -v  -H "Authorization: Bearer zIiyBjTzhU0eBWw0Jqb3khy_PDEiEhDexEjHMQY1WQKQy-CurDNhbEcjsYcLm7EmwAPXiS0cgAV2FIWhpAq9Ib94FtYX05KNObroZaYDsOiZiw_NC1RV8gN4"  -H "Content-Type: application/json"  \
+  https://api.bitbucket.org/2.0/repositories/manirajankannan/test_create \
+  -d '{"scm": "git", "is_private": "true", "fork_policy": "no_public_forks" }'
+
+----------------------------------------------
+Create Repo API (using username & Password)
+----------------------------------------------
+// var dataString = '{"scm": "git", "is_private": "false","mainbranch": "master", "fork_policy": "no_public_forks", "project": {"key": "'+req.body.project+'"} }';
+
+    // var options = {
+    //     url: 'https://api.bitbucket.org/2.0/repositories/'+req.headers['username'] +'/'+req.headers['repository'],
+    //     method: 'POST',
+    //     body: dataString,
+    //     auth : 'Bearer ' + req.headers['accesstoken']
+    //     // auth: {
+    //     //     'user': req.body.userName,
+    //     //     'pass': req.body.passWord
+    //     // }
+    // };
+    // function callback(error, response, body) {
+    //     if (!error && response.statusCode == 200) {
+    //         console.log(body);
+    //     }
+    //     console.log(options.auth);
+    // }
+    // request(options, callback);
+
+
+
+--------------------------------
+
+Commit CURL - 
+----------------------
+
+curl -u manirajankannan:senthamarai24. https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/diffstat/f0f63c9..015728c?true
+
+curl -u manirajankannan:senthamarai24. https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/src -F unnamed.png=@unnamed.png
+
+
+curl -u manirajankannan:senthamarai24. https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/commit/015728c..f0f63c9
+
+curl -H "Authorization: Bearer LMKXdR-bUGqnmHCFFAqcLi5eySm1stBU8J6nKqJTQeCjbttlvLW6JHdTbEQlvfiZt5QGL8iXx4wNm2iyVjrhtDw3_KGmyKkAVfCBSATlsTSgw_jRa8jF5qo=" https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/commit/098bc4b
+
+curl -H "Authorization: Bearer toJG4_ZzS0larJENHWBLCdTOHH5M5o3HSZoy-QiSlLYI5TpBUl3HE5-ucp3dzk1r7BaWk3CZUVMsCEdXZe5tPjloOpr8bn5mICZlaCEM3PsiIIbIJJhcG08=" https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/diff/098bc4b9ab8fda0e449c3571e21ef70de32d8cdf
+
+curl -u manirajankannan:senthamarai24. https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/diff/098bc4b9ab8fda0e449c3571e21ef70de32d8cdf
+Commit (Delete) - CURL
+
+curl -u manirajankannan:senthamarai24. https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/src -F files=unnamed.png -F files=unnd.png
+
+merge:
+curl -u manirajankannan:senthamarai24. https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/commits/master/merge=only
+
+Pull Request - Details:
+
+curl -u manirajankannan:senthamarai24. https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/pullrequests/1
+
+curl https://api.bitbucket.org/2.0/repositories/manirajankannan/repo4/pullrequests     -u manirajankannan:senthamarai24.     --request POST     --header 'Content-Type: application/json'     --data '{
+    "title": "My Title",
+    "state": "MERGED",
+    "source": {
+        "branch": {
+            "name": "master"
+        }
+    },
+    "destination": {
+        "branch": {
+            "name": "dev"
+        }
+    }
+}'
+
+Pull Req - Creation:
+
+curl https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/pullrequests     -u manirajankannan:senthamarai24.     --request POST     --header 'Content-Type: application/json'     --data '{
+    "title": "Final Merge",
+    "source": {
+        "branch": {
+            "name": "master"
+        }
+    },
+    "destination": {
+        "branch": {
+            "name": "dev"
+        }
+    }
+}'
+
+curl -H "Authorization: Bearer 7hLpZApjqEVJoi-Oj9OldudgACe-WbMgzOlDPgS24XzBY3R1aEz29cOUC8f6mgzpC6u2NK73sEZrapIaXjV8luaiHeAfy-EHtdLHmpIPElmv8L754OzD-Ynq"  https://api.bitbucket.org/2.0/repositories/manirajankannan/fullflow/pullrequests
+
+curl -X POST -H "Authorization: Bearer h_yznPDpN0VoHyGFofLZZRTi3wFmQagmxdHcSlSMnNvb-HpNarDPElIN-WzqtF7t8q6JB3kphmssm9zeenS2zAT1lt1d4vPH9-BHBdu2N2um7lJ4WVoE40bm"  https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/pullrequests/3/merge
+
+curl -u manirajankannan:senthamarai24. https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/patch/015728c..f0f63c9
+
+curl -u manirajankannan:senthamarai24. https://api.bitbucket.org/2.0/repositories/manirajankannan/repo4/commits?merges=only.
+
+curl -H "Authorization: Bearer z-Cl_A-rws_WXFzE9UQ565YLBAYlEQwOHLuBNFaBGIOJYiy9FidsYOi63PbIqbHuUCY1JBb-vkdrS1pQYJlTq--n5qJJl1FKTITHmNp-iix6SypH8hLgtoUU" https://api.bitbucket.org/2.0/repositories/manirajankannan/repo3/src \
+  --data-urlencode "west.txt=Lorem ipsum." \
+  --data-urlencode "message=Initial commit" \
+  --data-urlencode "author=Manirajan <smanirajan.kannan@gmail.com>" \
+  --data-urlencode "branch=dev"
+
+----------------------------------------------------
+Querying the last commit on a particular branch
+-----------------------------------------------------
+curl -X GET -H "Authorization: Bearer x3_YIAzCaFSZETRvT-RgsjPhwKDV1qKq6k6WBi72dn-z5j0oP_IMNYJGxRhaQXrEUFrTT2zi4Y5FhOazRgm2iWI91xMlIIJLH6Uq-JJH3GmRrfM6AQie4u1O" -H "Content-Type: application/json" https://api.bitbucket.org/2.0/repositories/manirajankannan/repo4/commits?until=deploy&limit=0&start=0
+
+
+curl -X GET -H "Authorization: Bearer orlBGGK1mHrXpF9bRtlHiKsFl-bna9JWoJ_xlzTA9xc8Ar50GZHftevXKb196VALm17OI6BJ2e2jKdwR8WH0oAwkj_n2Ai4YoYm9XtS-5Fo2VGeMu6Akp9eU" -H "Content-Type: application/json" https://api.bitbucket.org/2.0/repositories/manirajankannan/repo4/compare/commits?from=dev&to=master
+
+curl -X GET -H "Authorization: Bearer orlBGGK1mHrXpF9bRtlHiKsFl-bna9JWoJ_xlzTA9xc8Ar50GZHftevXKb196VALm17OI6BJ2e2jKdwR8WH0oAwkj_n2Ai4YoYm9XtS-5Fo2VGeMu6Akp9eU" -H "Content-Type: application/json" https://api.bitbucket.org/rest/api/1.0/users/manirajankannan/repo4/compare/commits?from=dev&to=master
+
+curl -X GET -H "Authorization: Bearer gkTNFaBSmiFMUgIsygKLujHf36q55ao0BjG0xbjBrbUjbQeWRQgDm19wCTx4e55ACrXzxx1VIS3f3liBP0cf2nTOBXngLnVn379YmJLFSDVDyYZJ2o2yBiJH" https://api.bitbucket.org/rest/api/1.0/users/manirajankannan/settings
+
+
+Find Alternate way (postgres):
+
+ // sequelize.authenticate().then(console.log(con.dialect, ' Database Connection Established successfully')
+    // ).catch(err => console.log(con.dialect, ' Error due to ',err))
+
+    // sequelize.query('SELECT * FROM posts', { type: sequelize.QueryTypes.SELECT})
+    // .then(function(err, items) {
+    //    // console.log(err, items);
+    // if(err) throw err;     
+    //     res.send(items); 
+    // }).catch(err => console.log(con.dialect, ' Cannot establish connection due to ',err))
+
+
+
+
+COmmit API:
+-----------------------------------------------------------------------------------------------------
+
+app.post('/commit', function (req, res) {
+   
+    let fD;
+    let formDatafull;
+    function getfiles() {fs.readdir(req.headers.template, function (err, files) {
+        //handling error
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        } 
+        files.forEach(function (file) {
+            var filen = file;
+            fD = {[filen]: {
+                        'value': req.headers.template+'\\'+ file,
+                        'options': {
+                          'filename': req.headers.template+'\\'+ file,
+                          'contentType': null
+                        }
+                      }
+                    }
+                     
+                    if (typeof formDatafull == "undefined") {
+                        console.log(file,'1')
+                        formDatafull = JSON.stringify(fD);
+                    }
+                    else{ 
+                        console.log(file,'2')
+                        formDatafull += JSON.stringify(fD);
+                        
+                    }
+                  
+            
+        });
+        // formDatafull += JSON.stringify({'branch': req.headers.branch,
+        // 'message': req.headers.message})
+         //console.log(formDatafull);
+    });
+}
+getfiles()
+    
+
+    var options = {
+        'method': 'POST',
+        'url': 'https://api.bitbucket.org/2.0/repositories/'+req.headers['username']+'/'+req.headers['repository']+'/src',
+        'headers': {
+          'Authorization': 'Bearer '+req.headers['accesstoken']+''
+        },
+        formData: formDatafull
+
+        
+        // formData: {
+         
+        //   [path.basename(req.headers.template)]: {
+        //     'value': fs.createReadStream(req.headers.template),
+        //     'options': {
+        //       'filename': req.headers.template,
+        //       'contentType': null
+        //     }
+        //   },
+        //   'query.txt': {
+        //     'value': fs.createReadStream(req.headers.template2),
+        //     'options': {
+        //       'filename': req.headers.template2,
+        //       'contentType': null
+        //     }
+        //   },
+        //   'branch': req.headers.branch,
+        //   'message': req.headers.message
+        // }
+      };
+      request(options, function (error, response) {
+       
+        console.log(formDatafull);
+        console.log(options.formData);
+        if (!error && response.statusCode == 200) {
+            // var obj = JSON.parse(body)
+            // res.status(200).json((obj))
+            console.log('200');
+        }
+         if (!error && response.statusCode == 201) {
+            // var obj = JSON.parse(body)
+            // res.status(200).json((obj))
+            console.log('201');
+        }
+        console.log(response.statusCode);
+      });
+});
+
+
+
+
+
+curl -X GET -H "Authorization: Bearer UNMQZbpG77idAbzPNRI6oDnMLGsMo6tOfJCNdbUzsIhGJgyfMRXN1eB2d_sjWy_UrcJE7Ksqn7g-G-p0oadzyKV3lugZTfGx9cyazbV_rMeUe9AmSu3BrhY-" https://api.bitbucket.org/2.0/repositories/manirajankannan?pagelen=2
